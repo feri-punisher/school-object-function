@@ -1,5 +1,5 @@
-//*************************************************************************** */
-// Details of School (Classes-Students-Teacher-Other Informations)
+//*******************************************************************************************************************************************************************/
+// Information of School (Classes & Students & Teacher & SubDetails)
 let school = {
         class1: {
             students: [
@@ -13,16 +13,16 @@ let school = {
                         lesson: {
                             math: 14,
                             physics: 12,
-                            chemistry: 16,
+                            chemistry: 16
                         },
-                    totAvrage: {
-                        lasteExam: [16, 14, 12],
-                        lastAvrage: [14],
+                        totAvrage: {
+                            lasteExam: [16, 14, 12],
+                            lastAvrage: [14]
                         },
                     },
-                    number: {
+                    callNumber: {
                         ownNumber: 09013455645,
-                        parentNumber: 091773664576,
+                        parentNumber: 091773664576
                     },
                 },
                 student02 = {
@@ -35,13 +35,17 @@ let school = {
                         lesson: {
                             math: 14,
                             physics: 11,
-                            chemistry: 10,
+                            chemistry: 10
                         },
                         totAvrage: {
                             lasteExam: [11, 14, 10],
-                            lastAvrage: [11.66],
+                            lastAvrage: [11.66]
                         },
-                    }
+                    },
+                    callNumber: {
+                        ownNumber: 09125462123,
+                        parentNumber: 09158885191
+                    },
                 }
             ],
             teacher: {
@@ -57,7 +61,7 @@ let school = {
                     phone: 09173457788
                 }
             },
-            infomation: {
+            entryDate: {
                 lastSession: [14020110, 14020113, 14020116]
             }
         },
@@ -79,7 +83,11 @@ let school = {
                             lasteExam: [15, 17, 18],
                             lastAvrage: [16.66],
                         },
-                    }
+                    },
+                    callNumber: {
+                        ownNumber: 09174587324,
+                        parentNumber: 09051245869
+                    },
                 },
                 student02 = {
                     personal: {
@@ -97,7 +105,11 @@ let school = {
                             lasteExam: [10, 13.74, 10],
                             lastAvrage: [11.25],
                         },
-                    }
+                    },
+                    callNumber: {
+                        ownNumber: 09168527436,
+                        parentNumber: 09184578624
+                    },
                 }
             ],
             teacher: {
@@ -113,86 +125,71 @@ let school = {
                     phone: 09171230101
                 }
             },
-            infomation: {
+            entryDate: {
                 lastSession: [14020110, 14020113, 14020116]
             }
         },
     };
-
-//*************************************************************************** */
-
-// Average Calculation Function for student
-function avrageScoreStudent(Average = []) {
+//*******************************************************************************************************************************************************************/
+// Average Calculation Function for Student
+function avrageScoreStudent(score = []) {
     let sum = 0;
-    for (let i = 0; i < Average.length; i++) {
-         sum += Average[i];
+    for (let i = 0; i < score.length; i++) {
+         sum += score[i];
         }
-        score = sum / Average.length;
-        console.log("The Student Average score is = ",score);
+        average = sum / score.length;
+        console.log("The Student Average score is = ", average);
     }
 avrageScoreStudent(school.class1.students[0].avrageScores.totAvrage.lasteExam);
 
-// Average Calculation Function for class
-function avrageScoreClass(Average = []) {
+// Average Calculation Function for Class
+function avrageScoreClass(score = []) {
     let sum = 0;
-    for (let i = 0; i < Average.length; i++) {
-         sum += Average[i];
+    for (let i = 0; i < score.length; i++) {
+         sum += score[i];
         }
-        score = sum / Average.length;
-        console.log("The Class Average score is = ",score);
+        average = sum / score.length;
+        console.log("The Class Average score is = ", average);
     }
 avrageScoreClass([school.class1.students[0].avrageScores.totAvrage.lasteExam[0],school.class1.students[0].avrageScores.totAvrage.lasteExam[1],school.class1.students[0].avrageScores.totAvrage.lasteExam[2],school.class1.students[1].avrageScores.totAvrage.lasteExam[0],school.class1.students[1].avrageScores.totAvrage.lasteExam[1],school.class1.students[1].avrageScores.totAvrage.lasteExam[2]]);
 
-// Average Calculation Function for school
-function avrageScoreSchool(Average = []) {
+// Average Calculation Function for School
+function avrageScoreSchool(score = []) {
     let sum = 0;
-    for (let i = 0; i < Average.length; i++) {
-         sum += Average[i];
+    for (let i = 0; i < score.length; i++) {
+         sum += score[i];
         }
-        score = sum / Average.length;
-        console.log("The school Average score is = ",score);
+        Average = sum / score.length;
+        console.log("The school Average score is = ", Average);
     }
 avrageScoreSchool([school.class1.students[0].avrageScores.totAvrage.lasteExam[0],school.class1.students[0].avrageScores.totAvrage.lasteExam[1],school.class1.students[0].avrageScores.totAvrage.lasteExam[2],school.class1.students[1].avrageScores.totAvrage.lasteExam[0],school.class1.students[1].avrageScores.totAvrage.lasteExam[1],school.class1.students[1].avrageScores.totAvrage.lasteExam[2],school.class2.students[0].avrageScores.totAvrage.lasteExam[0],school.class2.students[0].avrageScores.totAvrage.lasteExam[1],school.class2.students[0].avrageScores.totAvrage.lasteExam[2],school.class2.students[1].avrageScores.totAvrage.lasteExam[0],school.class2.students[1].avrageScores.totAvrage.lasteExam[1],school.class2.students[1].avrageScores.totAvrage.lasteExam[2]]);
-
-//*************************************************************************** */
-
-//&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
-// (First-Way) Number of Students CAlculation
+//*******************************************************************************************************************************************************************/
+// ###(First-Way)### Number of Students Calculation
 function stuNum(numStudent) { 
         let num = numStudent.length;
-        console.log('The Number is = ',num);
+        console.log('The Number is (using for-loop) = ', num);
     }
-// (First-Way) Number of Students CAlculation Output
 stuNum(school.class1.students)
-
-//&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
-
-// (second-way) Number of Students CAlculation
-console.log('The Number is = ',school.class1.students.length);
-
-//*************************************************************************** */
-
-// First-Way of Max and Min Calculation
-function forLoopMinMax1  (array= [])  {
+//&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+// ###(second-way)### Number of Students Calculation
+console.log('The Number is (using simple addressing) = ',school.class1.students.length);
+//*******************************************************************************************************************************************************************/
+// ###(Analogical-Way)### Calculation of Max and Min for Array of Numbers
+function MinMaxAnalogical (array= [])  {
     let min = array[0], max = array[0]
-
     for (let i = 0; i < array.length; i++) {
       let value = array[i]
       min = (value < min) ? value : min
       max = (value > max) ? value : max
     }
-
-    console.log("min = ",min );
-    console.log("max = ",max );
+    console.log("The Min(Alalogical) score for this student is = ", min );
+    console.log("The Max(Alalogical) score for this student is = ", max );
   }
-
-// Output First-Way of Max and Min Calculation
-// forLoopMinMax1(school.class1.students[0].avrageScores.totAvrage.lasteExam);
-
-//Second-Way of Max and Min Calculation
-function forLoopMinMax2  (array= [])  {
+MinMaxAnalogical(school.class1.students[0].avrageScores.totAvrage.lasteExam);
+//&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+// ###(Conditional-Way: if)### Calculation of Max or Min Score for Students
+function MinMaxStuConditional (array= [])  {
     let min = array[0], max = array[0] 
-
     for (let i = 0; i < array.length; i++) {
       let value = array[i]
       if (value<min) {
@@ -208,15 +205,52 @@ function forLoopMinMax2  (array= [])  {
         max = max;
       }
     }
-
-    console.log("min = ",min );
-    console.log("max = ",max );
+    console.log("The Min(Conditional) Score for this student is = ", min );
+    console.log("The Max(Conditional) Score for this student is = ", max );
   }
-
-// Min-Max Student
-forLoopMinMax2(school.class1.students[0].avrageScores.totAvrage.lasteExam);
-// Min-Max Class
-forLoopMinMax2([school.class1.students[0].avrageScores.totAvrage.lasteExam[0],school.class1.students[0].avrageScores.totAvrage.lasteExam[1],school.class1.students[0].avrageScores.totAvrage.lasteExam[2],school.class1.students[1].avrageScores.totAvrage.lasteExam[0],school.class1.students[1].avrageScores.totAvrage.lasteExam[1],school.class1.students[1].avrageScores.totAvrage.lasteExam[2]]);
-// Min-Max School
-forLoopMinMax2([school.class1.students[0].avrageScores.totAvrage.lasteExam[0],school.class1.students[0].avrageScores.totAvrage.lasteExam[1],school.class1.students[0].avrageScores.totAvrage.lasteExam[2],school.class1.students[1].avrageScores.totAvrage.lasteExam[0],school.class1.students[1].avrageScores.totAvrage.lasteExam[1],school.class1.students[1].avrageScores.totAvrage.lasteExam[2],school.class2.students[0].avrageScores.totAvrage.lasteExam[0],school.class2.students[0].avrageScores.totAvrage.lasteExam[1],school.class2.students[0].avrageScores.totAvrage.lasteExam[2],school.class2.students[1].avrageScores.totAvrage.lasteExam[0],school.class2.students[1].avrageScores.totAvrage.lasteExam[1],school.class2.students[1].avrageScores.totAvrage.lasteExam[2]]);
-//*************************************************************************** */
+MinMaxStuConditional(school.class1.students[0].avrageScores.totAvrage.lasteExam);
+// ###(Conditional-Way: if)### Calculation of Max and Min for Score Class
+function MinMaxClassConditional (array= [])  {
+    let min = array[0], max = array[0] 
+    for (let i = 0; i < array.length; i++) {
+      let value = array[i]
+      if (value<min) {
+        min = value;
+      } 
+      else{
+        min = min;
+      }
+      if (value>max) {
+        max = value;
+      } 
+      else{
+        max = max;
+      }
+    }
+    console.log("The Min(Conditional) Score for this class is = ", min );
+    console.log("The Max(Conditional) Score for this class is = ", max );
+  }
+MinMaxClassConditional([school.class1.students[0].avrageScores.totAvrage.lasteExam[0],school.class1.students[0].avrageScores.totAvrage.lasteExam[1],school.class1.students[0].avrageScores.totAvrage.lasteExam[2],school.class1.students[1].avrageScores.totAvrage.lasteExam[0],school.class1.students[1].avrageScores.totAvrage.lasteExam[1],school.class1.students[1].avrageScores.totAvrage.lasteExam[2]]);
+// ###(Conditional-Way: if)### Calculation of Max or Min SCore for School
+function MinMaxSchoolConditional (array= [])  {
+    let min = array[0], max = array[0] 
+    for (let i = 0; i < array.length; i++) {
+      let value = array[i]
+      if (value<min) {
+        min = value;
+      } 
+      else{
+        min = min;
+      }
+      if (value>max) {
+        max = value;
+      } 
+      else{
+        max = max;
+      }
+    }
+    console.log("The Min(Conditional) Score for this school is = ", min );
+    console.log("The Max(Conditional) Score for this school is = ", max );
+  }
+MinMaxSchoolConditional([school.class1.students[0].avrageScores.totAvrage.lasteExam[0],school.class1.students[0].avrageScores.totAvrage.lasteExam[1],school.class1.students[0].avrageScores.totAvrage.lasteExam[2],school.class1.students[1].avrageScores.totAvrage.lasteExam[0],school.class1.students[1].avrageScores.totAvrage.lasteExam[1],school.class1.students[1].avrageScores.totAvrage.lasteExam[2],school.class2.students[0].avrageScores.totAvrage.lasteExam[0],school.class2.students[0].avrageScores.totAvrage.lasteExam[1],school.class2.students[0].avrageScores.totAvrage.lasteExam[2],school.class2.students[1].avrageScores.totAvrage.lasteExam[0],school.class2.students[1].avrageScores.totAvrage.lasteExam[1],school.class2.students[1].avrageScores.totAvrage.lasteExam[2]]);
+//*******************************************************************************************************************************************************************/
